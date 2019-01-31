@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C8493A6F21D22459008E0E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8493A6E21D22459008E0E07 /* AppDelegate.swift */; };
-		C8493A7121D22459008E0E07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8493A7021D22459008E0E07 /* ViewController.swift */; };
 		C8493A7421D22459008E0E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8493A7221D22459008E0E07 /* Main.storyboard */; };
 		C8493A7621D2245A008E0E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8493A7521D2245A008E0E07 /* Assets.xcassets */; };
 		C8493A7921D2245A008E0E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8493A7721D2245A008E0E07 /* LaunchScreen.storyboard */; };
 		C8493A8421D2245A008E0E07 /* TipsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8493A8321D2245A008E0E07 /* TipsterTests.swift */; };
 		C8493A8F21D2245A008E0E07 /* TipsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8493A8E21D2245A008E0E07 /* TipsterUITests.swift */; };
+		C8493A9E21D36C88008E0E07 /* TipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8493A9D21D36C88008E0E07 /* TipsterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		C8493A6B21D22459008E0E07 /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8493A6E21D22459008E0E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8493A7021D22459008E0E07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8493A7321D22459008E0E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8493A7521D2245A008E0E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8493A7821D2245A008E0E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		C8493A8A21D2245A008E0E07 /* TipsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8493A8E21D2245A008E0E07 /* TipsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsterUITests.swift; sourceTree = "<group>"; };
 		C8493A9021D2245A008E0E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8493A9D21D36C88008E0E07 /* TipsterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		C8493A6D21D22459008E0E07 /* Tipster */ = {
 			isa = PBXGroup;
 			children = (
+				C8493A9C21D36C50008E0E07 /* View Controllers */,
 				C8493A6E21D22459008E0E07 /* AppDelegate.swift */,
-				C8493A7021D22459008E0E07 /* ViewController.swift */,
 				C8493A7221D22459008E0E07 /* Main.storyboard */,
 				C8493A7521D2245A008E0E07 /* Assets.xcassets */,
 				C8493A7721D2245A008E0E07 /* LaunchScreen.storyboard */,
@@ -123,6 +123,14 @@
 				C8493A9021D2245A008E0E07 /* Info.plist */,
 			);
 			path = TipsterUITests;
+			sourceTree = "<group>";
+		};
+		C8493A9C21D36C50008E0E07 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8493A9D21D36C88008E0E07 /* TipsterViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8493A7121D22459008E0E07 /* ViewController.swift in Sources */,
+				C8493A9E21D36C88008E0E07 /* TipsterViewController.swift in Sources */,
 				C8493A6F21D22459008E0E07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
