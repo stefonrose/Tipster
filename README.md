@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Demonstration](https://i.imgur.com/a16urSr.gif)
+![Demonstration](https://i.imgur.com/WciNTeP.gif)
 
 ## License
 
