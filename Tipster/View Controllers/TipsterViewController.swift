@@ -10,6 +10,9 @@ import UIKit
 
 class TipsterViewController: UIViewController {
 
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBOutlet weak var billEntry: UITextField!
     @IBOutlet weak var tipSelect: UISegmentedControl!
     @IBOutlet weak var customTip: UITextField!
@@ -34,10 +37,31 @@ class TipsterViewController: UIViewController {
     var bill: Double = 0
     var tip: Double = 0
     var total: Double = 0
+    var percents: [Double] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let theme: String = UserDefaults.standard.string(forKey: "theme")!
+        
+        switch theme {
+        case "alternate":
+            Theme.theme2(topView: self.topView, bottomView: self.bottomView)
+        case "dark":
+            Theme.theme3(topView: self.topView, bottomView: self.bottomView)
+        case "black":
+            Theme.theme4(topView: self.topView, bottomView: self.bottomView)
+        default:
+            Theme.theme1(topView: self.topView, bottomView: self.bottomView)
+        }
+        
+        percents = UserDefaults.standard.array(forKey: "percents") as! [Double]
+        
+        updateSegments()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         billEntry.becomeFirstResponder()
         customTip.borderStyle = .roundedRect
         customTipView.layer.cornerRadius = 5
@@ -89,10 +113,10 @@ class TipsterViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
-        let tipPercents = [0.15,0.20,0.25]
+        //percents = [0.15,0.20,0.25]
         bill = Double(billEntry.text!) ?? 0
         if tipSelect.selectedSegmentIndex >= 0 && tipSelect.selectedSegmentIndex <= 2 {
-            tip = bill * tipPercents[tipSelect.selectedSegmentIndex]
+            tip = bill * percents[tipSelect.selectedSegmentIndex]
         } else {
             tip = bill * (Double(customTip.text!) ?? 0)/100
         }
@@ -118,6 +142,7 @@ class TipsterViewController: UIViewController {
         splitBillAmount.text = String(format: "$%.2f", splitBill)
         splitBillAmount.sizeToFit()
     }
+    
     @IBAction func viewSplit(_ sender: Any) {
         view.endEditing(true)
         UIView.animate(withDuration: 0.25) {
@@ -135,4 +160,15 @@ class TipsterViewController: UIViewController {
             numPeopleLabel.text = String(Int(numPeopleStepper.value))
         }
     }
+    
+    @IBAction func toSettings(_ sender: Any) {
+        self.performSegue(withIdentifier: "settings", sender: nil)
+    }
+    
+    func updateSegments() {
+        tipSelect.setTitle("\(Int(percents[0] * 100))", forSegmentAt: 0)
+        tipSelect.setTitle("\(Int(percents[1] * 100))", forSegmentAt: 1)
+        tipSelect.setTitle("\(Int(percents[2] * 100))", forSegmentAt: 2)
+    }
+    
  }
